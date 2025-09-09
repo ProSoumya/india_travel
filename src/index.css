@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tourism-focused design system with ocean blues, sunset oranges, and nature greens */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Ocean Blue Primary Theme */
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 60%;
+    --primary-dark: 210 100% 35%;
+
+    /* Sunset Orange Secondary */
+    --secondary: 25 95% 65%;
+    --secondary-foreground: 215 25% 27%;
+    --secondary-light: 25 95% 75%;
+    --secondary-dark: 25 95% 55%;
+
+    /* Nature Green Accent */
+    --accent: 145 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 145 70% 60%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 96%;
+    --ring: 210 100% 45%;
+
+    /* Tourism-specific gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(210 100% 45%), hsl(210 100% 60%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 95% 65%), hsl(25 95% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 45%), hsl(25 95% 65%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    
+    /* Shadows with brand colors */
+    --shadow-ocean: 0 10px 30px -10px hsl(210 100% 45% / 0.3);
+    --shadow-sunset: 0 10px 30px -10px hsl(25 95% 65% / 0.3);
+    --shadow-elegant: 0 4px 20px -2px hsl(215 25% 27% / 0.1);
+
+    /* Animation and transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 215 25% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 215 25% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 210 100% 60%;
+    --primary-foreground: 215 25% 10%;
+    --primary-light: 210 100% 70%;
+    --primary-dark: 210 100% 45%;
+
+    --secondary: 25 95% 70%;
+    --secondary-foreground: 215 25% 10%;
+    --secondary-light: 25 95% 80%;
+    --secondary-dark: 25 95% 60%;
+
+    --accent: 145 70% 50%;
+    --accent-foreground: 215 25% 10%;
+    --accent-light: 145 70% 65%;
+
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 15% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 15%;
+    --ring: 210 100% 60%;
+
+    /* Dark mode gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(210 100% 60%), hsl(210 100% 45%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 95% 70%), hsl(25 95% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 60%), hsl(25 95% 70%));
+    --gradient-card: linear-gradient(145deg, hsl(215 25% 12%), hsl(215 25% 15%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Tourism-specific utility classes */
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-ocean {
+    box-shadow: var(--shadow-ocean);
+  }
+  
+  .shadow-sunset {
+    box-shadow: var(--shadow-sunset);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Hero text gradient */
+  .text-gradient-hero {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Destination card hover effects */
+  .destination-card {
+    @apply transition-smooth hover:scale-105 hover:shadow-elegant cursor-pointer;
+  }
+  
+  /* Button hover animations */
+  .btn-ocean {
+    @apply bg-primary text-primary-foreground transition-smooth hover:bg-primary/90 shadow-ocean;
+  }
+  
+  .btn-sunset {
+    @apply bg-secondary text-secondary-foreground transition-smooth hover:bg-secondary/90 shadow-sunset;
+  }
+}
